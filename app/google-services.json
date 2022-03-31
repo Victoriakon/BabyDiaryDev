@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "477266923259",
+    "project_id": "baby-diary-286f1",
+    "storage_bucket": "baby-diary-286f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477266923259:android:508278982bba9b9e266a5e",
+        "android_client_info": {
+          "package_name": "com.example.babydiary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "477266923259-ukfqfcqkf3ensigja1iv5rciib8g583j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnZemkVkdfCNJOSaDX8MOloEvnSqiamPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "477266923259-ukfqfcqkf3ensigja1iv5rciib8g583j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
