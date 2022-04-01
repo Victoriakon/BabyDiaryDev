@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/babyDetailsListRvFragment">
+
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.babydiary.feed.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/babyDetailsFragment"
+        android:name="com.example.babydiary.feed.BabyDetailsFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_babydetails" >
+        <argument
+            android:name="babyDet"
+            app:argType="string" />
+    </fragment>
+
+    <action android:id="@+id/action_global_aboutFragment" app:destination="@id/aboutFragment"/>
+    <fragment
+        android:id="@+id/babyDetailsListRvFragment"
+        android:name="com.example.babydiary.feed.BabyDetailsListRvFragment"
+        android:label="BabyDetails"
+        tools:layout="@layout/fragment_babydetails_list_rv">
+    <action
+        android:id="@+id/action_studentListRvFragment_to_studentDetailsFragment"
+        app:destination="@id/babyDetailsFragment" />
+</fragment>
+
+
+
+
+</navigation>
