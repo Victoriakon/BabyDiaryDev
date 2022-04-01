@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int SPLASH_SCREEN = 5000;
+         private static int SPLASH_SCREEN = 5000;
     //Variables
     Animation topAnim, bottomAnim;
     ImageView image;
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         new Handler().postDelayed(() -> {
 //            Intent intent=new Intent(MainActivity.this, LoginActivity.class);
-            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            Intent intent = new Intent(MainActivity.this, BaseActivity.class);
             Pair[] pairs = new Pair[2];
             pairs[0] = new Pair<View, String>(image, "logo_image");
             pairs[1] = new Pair<View, String>(logo, "logo_text");
