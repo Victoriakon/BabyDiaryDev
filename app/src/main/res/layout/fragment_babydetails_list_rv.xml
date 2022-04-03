@@ -7,7 +7,7 @@
     tools:context="feed.BabyDetailsListRvFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/studentlist_rv"
+        android:id="@+id/babydetails_rv"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/studentlist_add_btn"
+        android:id="@+id/babydetails_add_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"

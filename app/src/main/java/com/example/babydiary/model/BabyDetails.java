@@ -1,7 +1,13 @@
 package com.example.babydiary.model;
 
-public class BabyDetails {
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+@Entity
+public class BabyDetails {
+@PrimaryKey
+@NonNull
       String month_id="" ;
       String description="";
       String uri="";

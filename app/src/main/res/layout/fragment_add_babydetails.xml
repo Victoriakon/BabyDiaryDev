@@ -42,7 +42,7 @@
                 android:hint="@string/name">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/main_name_et"
+                    android:id="@+id/main_desc_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
@@ -56,21 +56,14 @@
                 android:hint="@string/id">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/main_id_et"
+                    android:id="@+id/main_month_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <CheckBox
-                android:id="@+id/main_cb"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:text="CB"
-                android:textSize="24sp" />
+
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

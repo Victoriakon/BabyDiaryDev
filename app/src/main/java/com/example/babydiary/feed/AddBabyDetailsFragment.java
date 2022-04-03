@@ -2,65 +2,66 @@ package com.example.babydiary.feed;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import com.example.babydiary.R;
+import com.example.babydiary.model.BabyDetails;
+import com.example.babydiary.model.Model;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AddBabyDetailsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class AddBabyDetailsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    EditText descriptionEt;
+    EditText month_idEt;
+    Button saveBtn;
+    Button cancelBtn;
+    ProgressBar progressBar;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public AddBabyDetailsFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AddBabyDetailsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AddBabyDetailsFragment newInstance(String param1, String param2) {
-        AddBabyDetailsFragment fragment = new AddBabyDetailsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_add_babydetails,container, false);
+        descriptionEt = view.findViewById(R.id.main_desc_et);
+        month_idEt = view.findViewById(R.id.main_month_et);
+        saveBtn = view.findViewById(R.id.main_save_btn);
+        cancelBtn = view.findViewById(R.id.main_cancel_btn);
+//        progressBar = view.findViewById(R.id.main_progressbar);
+//        progressBar.setVisibility(View.GONE);
+
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                save();
+            }
+        });
+        return view;
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_babydetails, container, false);
+
+    private void save() {
+        progressBar.setVisibility(View.VISIBLE);
+        saveBtn.setEnabled(false);
+        cancelBtn.setEnabled(false);
+        String month_id=month_idEt.getText().toString() ;
+        String description=descriptionEt.getText().toString();
+        String uri="";
+
+        Log.d("TAG","saved name:" + month_id + " id:" + description );
+        BabyDetails babydetails = new BabyDetails(month_id,description,uri);
+        Model.instance.addBabyDetails(babydetails,()->{
+        });
+        Navigation.findNavController(month_idEt).navigateUp();
+
     }
 }

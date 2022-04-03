@@ -12,32 +12,45 @@ import java.util.concurrent.Executors;
 
 public class Model {
     public static final Model instance = new Model();
+    Executor executor=Executors.newFixedThreadPool(1);
+    Handler mainThread =HandlerCompat.createAsync(Looper.getMainLooper());
 
     private Model(){
-        for(int i=0;i<100;i++){
-            BabyDetails bd = new BabyDetails("name",""+i,"");
-            data.add(bd);
-        }
+
     }
+     public interface GetAllBabysListener{
+        void onComplete(List<BabyDetails> list);
+     }
+     public void getAllBabyDetail(GetAllBabysListener listener){
+        executor.execute(()->{
+            List<BabyDetails> list=AppLocalDb.db.babydetailsDao().getAll();
+            mainThread.post(()->{
+                listener.onComplete(list);
+            });
+        });
+     }
 
-    List<BabyDetails> data = new LinkedList<BabyDetails>();
 
-    public List<BabyDetails> getAllBabyDetails(){
-        return data;
-    }
+    public void addBabyDetails(BabyDetails babydetails,AddBabyDetailListener listener){
+        executor.execute(()->{
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            AppLocalDb.db.babydetailsDao().insertAll(babydetails);
+            mainThread.post(()->{
+                listener.onComplete();
+            });
+        });
 
-    public void addBabyDetails(BabyDetails babydetails){
-        data.add(babydetails);
     }
 
     public BabyDetails getBabyDetailsById(String babydetailstId) {
-        for (BabyDetails bd:data
-        ) {
-            if (bd.getMonth_id().equals(babydetailstId)){
-                return bd;
-            }
-        }
         return null;
     }
 
+    public interface AddBabyDetailListener {
+        void onComplete();
+    }
 }

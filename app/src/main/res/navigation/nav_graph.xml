@@ -28,8 +28,15 @@
         android:label="BabyDetails"
         tools:layout="@layout/fragment_babydetails_list_rv">
     <action
-        android:id="@+id/action_studentListRvFragment_to_studentDetailsFragment"
+        android:id="@+id/action_BabyDetailsListRvFragment_to_BabyDetailsFragment"
         app:destination="@id/babyDetailsFragment" />
+
+        <fragment
+            android:id="@+id/addBabyDetailsFragment"
+            android:name="com.example.babydiary.feed.AddBabyDetailsFragment"
+            android:label="Add New Baby"
+            tools:layout="@layout/fragment_add_babydetails" />
+        <action android:id="@+id/action_global_addBabyDetailsFragment" app:destination="@id/addBabyDetailsFragment" />
 </fragment>
 
 

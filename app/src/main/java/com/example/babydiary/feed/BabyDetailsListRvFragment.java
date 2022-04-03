@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.babydiary.R;
@@ -28,31 +29,32 @@ import java.util.List;
 public class BabyDetailsListRvFragment extends Fragment {
 
     List<BabyDetails> data;
+    MyAdapter adapter;
+    ProgressBar progressBar;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_babydetails_list_rv,container,false);
-        data = Model.instance.getAllBabyDetails();
 
-        RecyclerView list = view.findViewById(R.id.studentlist_rv);
+        RecyclerView list = view.findViewById(R.id.babydetails_rv);
         list.setHasFixedSize(true);
 
         list.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        MyAdapter adapter = new MyAdapter();
+        adapter = new MyAdapter();
         list.setAdapter(adapter);
 
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(View v,int position) {
                 String babyId = data.get(position).getMonth_id();
-                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionStudentListRvFragmentToStudentDetailsFragment(babyId));
+                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(babyId));
 
             }
         });
 
-        ImageButton add = view.findViewById(R.id.studentlist_add_btn);
+        ImageButton add = view.findViewById(R.id.babydetails_add_btn);
 //        add.setOnClickListener((v)->{
 //            Navigation.findNavController(v).navigate(R.id.action_studentListRvFragment_to_studentDetailsFragment);
 //        });
@@ -106,6 +108,9 @@ public class BabyDetailsListRvFragment extends Fragment {
 
         @Override
         public int getItemCount() {
+            if(data==null){
+                return 0;
+            }
             return data.size();
         }
     }

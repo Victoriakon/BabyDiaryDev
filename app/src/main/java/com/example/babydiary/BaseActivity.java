@@ -34,6 +34,6 @@ public class BaseActivity extends AppCompatActivity {
     private void save() {
         String name = descEt.getText().toString();
         String id = idEt.getText().toString();
-        Log.d("TAG","saved name:" + name + " id:" + id + " uri:" );
+        Log.d("TAG","Month Old Baby" + descEt + " description:" + idEt + " uri:" );
     }
 }
