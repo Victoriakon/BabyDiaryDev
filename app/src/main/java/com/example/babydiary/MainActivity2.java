@@ -18,7 +18,7 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        NavHost navHost = (NavHost)getSupportFragmentManager().findFragmentById(R.id.main_navhost);
+        NavHost navHost = (NavHost)getSupportFragmentManager().findFragmentById(R.id.main2_navhost);
         navCtl = navHost.getNavController();
 
         NavigationUI.setupActionBarWithNavController(this,navCtl);

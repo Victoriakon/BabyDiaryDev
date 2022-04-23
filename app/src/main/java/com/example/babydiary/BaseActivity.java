@@ -23,17 +23,22 @@ public class BaseActivity extends AppCompatActivity {
         Button saveBtn = findViewById(R.id.main_save_btn);
         Button cancelBtn = findViewById(R.id.main_cancel_btn);
 
+//        saveBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                save();
+//            }
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 save();
             }
         });
     }
 
     private void save() {
-        String name = descEt.getText().toString();
-        String id = idEt.getText().toString();
-        Log.d("TAG","Month Old Baby" + descEt + " description:" + idEt + " uri:" );
+        String description = descEt.getText().toString();
+        String month_id = idEt.getText().toString();
+        Log.d("TAG","Month Old Baby" + month_id + " description:" + description  );
     }
 }

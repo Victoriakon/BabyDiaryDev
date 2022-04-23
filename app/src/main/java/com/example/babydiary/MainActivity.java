@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         new Handler().postDelayed(() -> {
 //            Intent intent=new Intent(MainActivity.this, LoginActivity.class);
-            Intent intent = new Intent(MainActivity.this, BaseActivity.class);
+            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
             Pair[] pairs = new Pair[2];
             pairs[0] = new Pair<View, String>(image, "logo_image");
             pairs[1] = new Pair<View, String>(logo, "logo_text");

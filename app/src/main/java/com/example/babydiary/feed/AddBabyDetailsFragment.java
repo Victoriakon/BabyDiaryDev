@@ -36,8 +36,8 @@ public class AddBabyDetailsFragment extends Fragment {
         month_idEt = view.findViewById(R.id.main_month_et);
         saveBtn = view.findViewById(R.id.main_save_btn);
         cancelBtn = view.findViewById(R.id.main_cancel_btn);
-//        progressBar = view.findViewById(R.id.main_progressbar);
-//        progressBar.setVisibility(View.GONE);
+        progressBar = view.findViewById(R.id.main_progressbar);
+        progressBar.setVisibility(View.GONE);
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,13 +55,13 @@ public class AddBabyDetailsFragment extends Fragment {
         cancelBtn.setEnabled(false);
         String month_id=month_idEt.getText().toString() ;
         String description=descriptionEt.getText().toString();
-        String uri="";
+//        String uri="";
 
         Log.d("TAG","saved name:" + month_id + " id:" + description );
-        BabyDetails babydetails = new BabyDetails(month_id,description,uri);
+        BabyDetails babydetails = new BabyDetails(month_id,description);
         Model.instance.addBabyDetails(babydetails,()->{
         });
-        Navigation.findNavController(month_idEt).navigateUp();
+        Navigation.findNavController(descriptionEt).navigateUp();
 
     }
 }

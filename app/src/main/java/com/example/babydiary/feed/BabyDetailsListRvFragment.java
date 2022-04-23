@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,12 +31,19 @@ public class BabyDetailsListRvFragment extends Fragment {
 
     List<BabyDetails> data;
     MyAdapter adapter;
-    ProgressBar progressBar;
+//    ProgressBar progressBar;
+    SwipeRefreshLayout swipeRefresh;
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_babydetails_list_rv,container,false);
+        View view = inflater.inflate(R.layout.fragment_babydetails_list_rv, container, false);
+
+        swipeRefresh = view.findViewById(R.id.babydetails_swiperefresh);
+        swipeRefresh.setOnRefreshListener(() -> refresh());
+//        progressBar=view.findViewById(R.id.babydetails_progressbar);
+//        progressBar.setVisibility(View.GONE);
 
         RecyclerView list = view.findViewById(R.id.babydetails_rv);
         list.setHasFixedSize(true);
@@ -47,21 +55,45 @@ public class BabyDetailsListRvFragment extends Fragment {
 
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(View v,int position) {
+            public void onItemClick(View v, int position) {
                 String babyId = data.get(position).getMonth_id();
-                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(babyId));
+//                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(babyId));
+                  Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(babyId));
 
             }
         });
 
-        ImageButton add = view.findViewById(R.id.babydetails_add_btn);
-//        add.setOnClickListener((v)->{
-//            Navigation.findNavController(v).navigate(R.id.action_studentListRvFragment_to_studentDetailsFragment);
-//        });
-        add.setOnClickListener(Navigation.createNavigateOnClickListener(BabyDetailsListRvFragmentDirections.actionGlobalAboutFragment()));
         setHasOptionsMenu(true);
+        refresh();
         return view;
     }
+
+//        ImageButton add = view.findViewById(R.id.babydetails_add_btn);
+////        add.setOnClickListener((v)->{
+////            Navigation.findNavController(v).navigate(R.id.action_studentListRvFragment_to_studentDetailsFragment);
+////        });
+//        add.setOnClickListener(Navigation.createNavigateOnClickListener(BabyDetailsListRvFragmentDirections.actionGlobalAboutFragment()));
+//        setHasOptionsMenu(true);
+//        return view;
+//    }
+
+    private void refresh() {
+        swipeRefresh.setRefreshing(true);
+        Model.instance.getAllBabyDetail((list)->{
+            data=list;
+            adapter.notifyDataSetChanged();
+            swipeRefresh.setRefreshing(false);
+        });
+    }
+
+//    private void refresh(){
+//        progressBar.setVisibility(View.VISIBLE);
+//        Model.instance.getAllBabyDetail((list)->{
+//            data=list;
+//            adapter.notifyDataSetChanged();
+//            progressBar.setVisibility(View.GONE);
+//        });
+//    }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
         TextView descTv;
@@ -69,7 +101,7 @@ public class BabyDetailsListRvFragment extends Fragment {
 
         public MyViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
-            descTv = itemView.findViewById(R.id.listrow_desc_tv);
+//            descTv = itemView.findViewById(R.id.listrow_desc_tv);
             monthTv = itemView.findViewById(R.id.listrow_month_tv);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -102,7 +134,7 @@ public class BabyDetailsListRvFragment extends Fragment {
         @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
             BabyDetails babydetails = data.get(position);
-            holder.descTv.setText(babydetails.getDescription());
+//            holder.descTv.setText(babydetails.getDescription());
             holder.monthTv.setText(babydetails.getMonth_id());
         }
 
@@ -123,7 +155,7 @@ public class BabyDetailsListRvFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.menu_add){
+        if (item.getItemId() == R.id.addBabyDetailsFragment){
             Log.d("TAG","ADD...");
             return true;
         }else {

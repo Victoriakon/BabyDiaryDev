@@ -16,6 +16,10 @@ import com.example.babydiary.model.BabyDetails;
 import com.example.babydiary.model.Model;
 
 public class BabyDetailsFragment extends Fragment {
+
+    TextView descTv;
+    TextView monthTv;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -25,13 +29,21 @@ public class BabyDetailsFragment extends Fragment {
 
 
         String babyId=BabyDetailsFragmentArgs.fromBundle(getArguments()).getBabyDet();
-        BabyDetails babydetails = Model.instance.getBabyDetailsById(babyId);
+//        BabyDetails babydetails = Model.instance.getBabyDetailsById(babyId);
+        Model.instance.getBabyDetailsById(babyId,new Model.GetBabyDetailsById(){
 
-        TextView description = view.findViewById(R.id.details_desc_tv);
-        TextView month_id = view.findViewById(R.id.details_month_tv);
+            @Override
+            public void onComplete(BabyDetails babydetails) {
 
-        description.setText(babydetails.getDescription());
-        month_id.setText(babydetails.getMonth_id());
+                monthTv.setText(babydetails.getMonth_id());
+                descTv.setText(babydetails.getDescription());
+
+            }
+        });
+
+        monthTv = view.findViewById(R.id.details_month_tv);
+        descTv = view.findViewById(R.id.details_desc_tv);
+
 
         Button backBtn = view.findViewById(R.id.details_back_btn);
         backBtn.setOnClickListener((v)->{
@@ -39,4 +51,4 @@ public class BabyDetailsFragment extends Fragment {
         });
         return view;
     }
-    }
+}

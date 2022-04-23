@@ -7,39 +7,42 @@
 
 
     <fragment
-        android:id="@+id/aboutFragment"
-        android:name="com.example.babydiary.feed.AboutFragment"
-        android:label="About"
-        tools:layout="@layout/fragment_about" />
-    <fragment
-        android:id="@+id/babyDetailsFragment"
-        android:name="com.example.babydiary.feed.BabyDetailsFragment"
-        android:label="Details"
-        tools:layout="@layout/fragment_babydetails" >
-        <argument
-            android:name="babyDet"
-            app:argType="string" />
-    </fragment>
-
-    <action android:id="@+id/action_global_aboutFragment" app:destination="@id/aboutFragment"/>
-    <fragment
         android:id="@+id/babyDetailsListRvFragment"
         android:name="com.example.babydiary.feed.BabyDetailsListRvFragment"
         android:label="BabyDetails"
         tools:layout="@layout/fragment_babydetails_list_rv">
     <action
-        android:id="@+id/action_BabyDetailsListRvFragment_to_BabyDetailsFragment"
+        android:id="@+id/action_babyDetailsListRvFragment_to_babyDetailsFragment"
         app:destination="@id/babyDetailsFragment" />
+    </fragment>
 
-        <fragment
-            android:id="@+id/addBabyDetailsFragment"
-            android:name="com.example.babydiary.feed.AddBabyDetailsFragment"
-            android:label="Add New Baby"
-            tools:layout="@layout/fragment_add_babydetails" />
-        <action android:id="@+id/action_global_addBabyDetailsFragment" app:destination="@id/addBabyDetailsFragment" />
+    <fragment
+    android:id="@+id/babyDetailsFragment"
+        android:name="com.example.babydiary.feed.BabyDetailsFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_babydetails" >
+        <argument
+        android:name="babyDet"
+        app:argType="string" />
 </fragment>
 
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.babydiary.feed.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
+    <action
+        android:id="@+id/action_global_aboutFragment"
+        app:destination="@id/aboutFragment" />
 
 
+    <fragment
+        android:id="@+id/addBabyDetailsFragment"
+        android:name="com.example.babydiary.feed.AddBabyDetailsFragment"
+        android:label="Add New Baby"
+        tools:layout="@layout/fragment_add_babydetails" />
+    <action
+        android:id="@+id/action_global_addBabyDetailsFragment"
+        app:destination="@id/addBabyDetailsFragment" />
 
 </navigation>
