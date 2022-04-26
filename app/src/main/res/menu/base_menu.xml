@@ -8,8 +8,8 @@
         android:title="About"
         app:showAsAction="never" />
     <item
-        android:id="@+id/BabyDevFragment"
+        android:id="@+id/babyGalleryFragment"
         android:icon="@android:drawable/ic_menu_info_details"
-        android:title="Baby Development"
+        android:title="Gallery"
         app:showAsAction="never" />
 </menu>
