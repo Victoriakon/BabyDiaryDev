@@ -8,17 +8,16 @@
     android:background="?attr/selectableItemBackground">
 
 
-
     <TextView
         android:id="@+id/listrow_month_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="52dp"
         android:text="TextView"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/listrow_avatar_imv"/>
+        app:layout_constraintStart_toEndOf="@+id/listrow_avatar_imv" />
 
     <ImageView
         android:id="@+id/listrow_avatar_imv"

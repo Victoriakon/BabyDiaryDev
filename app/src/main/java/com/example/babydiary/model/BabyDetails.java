@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.google.firebase.Timestamp;
+import com.google.firebase.firestore.FieldValue;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,14 +14,30 @@ import java.util.Map;
 public class BabyDetails {
       public static final String COLLECTION_NAME = "babydetails";
       @PrimaryKey
-@NonNull
+      @NonNull
       String month_id="" ;
       String description="";
 
+      public Long getUpdateDate() {
+            return updateDate;
+      }
 
 
-      //      String uri="";
-//      Long updateDate=new Long(0);
+
+      Long updateDate=new Long(0);
+
+      public void setImage(String url) {
+            image = url;
+      }
+
+      public String getImage() {
+            return image;
+      }
+
+      String image;
+
+
+      public  void setUpdateDate(Long updateDate){ this.updateDate=updateDate;}
 
       public BabyDetails(){}
       public BabyDetails(String month_id,String description){
@@ -31,8 +50,14 @@ public class BabyDetails {
       public static BabyDetails create(Map<String, Object> json) {
             String month_id = (String) json.get("month_id");
             String description = (String) json.get("description");
+            Timestamp ts=(Timestamp)json.get("updateDate");
+            Long updateDate=ts.getSeconds();
+            String image = (String) json.get("image");
+
 
             BabyDetails babydetails=new BabyDetails(month_id,description);
+            babydetails.setUpdateDate(updateDate);
+            babydetails.setImage(image);
             return babydetails;
       }
 
@@ -57,22 +82,8 @@ public class BabyDetails {
             Map<String,Object> json = new HashMap<String,Object>();
             json.put("month_id", month_id);
             json.put("description", description);
+            json.put("updateDate", FieldValue.serverTimestamp());
+            json.put("image",image);
             return json;
       }
-
-//      public String getUri() {
-//            return uri;
-//      }
-
-//      public void setUri(String uri) {
-//            this.uri = uri;
-//      }
-
-//      public Long getUpdateDate() {
-//            return updateDate;
-//      }
-
-//      public void setUpdateDate(Long updateDate) {
-//            this.updateDate = updateDate;
-//      }
 }
