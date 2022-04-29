@@ -11,7 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -19,6 +23,7 @@ import android.widget.TextView;
 
 import com.example.babydiary.R;
 import com.example.babydiary.modelRegimen.ModelRegimen;
+import com.example.babydiary.modelRegimen.Regimen;
 import com.google.firebase.auth.internal.RecaptchaActivity;
 
 
@@ -64,26 +69,77 @@ public class RegimenFragment extends Fragment {
 
     private void refresh(){adapter.notifyDataSetChanged();}
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder {
         TextView time;
         TextView recomendation;
 
         public MyViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
-             = itemView.findViewById(R.id.listrow_name_tv);
-            idTv = itemView.findViewById(R.id.listrow_id_tv);
-            cb = itemView.findViewById(R.id.listrow_cb);
-            avatarImv = itemView.findViewById(R.id.listrow_avatar_imv);
+            time = itemView.findViewById(R.id.time);
+            recomendation = itemView.findViewById(R.id.recomendation);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int pos = getAdapterPosition();
-                    listener.onItemClick(v,pos);
+                    listener.onItemClick(v, pos);
                 }
             });
         }
 
-
+        void bind(Regimen regimen) {
+            time.setText(regimen.getTime());
+            recomendation.setText(regimen.getRecomendation());
+        }
     }
+
+    interface OnItemClickListener{
+            void onItemClick(View v, int position);
+    }
+
+    class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
+        OnItemClickListener listener;
+
+        public void setOnItemClickListener(OnItemClickListener listener) {
+            this.listener = listener;
+        }
+
+        @NonNull
+        @Override
+        public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View view = getLayoutInflater().inflate(R.layout.regimen_list_row, parent, false);
+            MyViewHolder holder = new MyViewHolder(view, listener);
+            return holder;
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+            Regimen regimen = viewModel.getData().getValue().get(position);
+            holder.bind(regimen);
+        }
+
+        @Override
+        public int getItemCount() {
+            if (viewModel.getData().getValue() == null) {
+                return 0;
+            }
+            return viewModel.getData().getValue().size();
+        }
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater){
+        super.onCreateOptionsMenu(menu,inflater);
+        inflater.inflate(R.menu.regimen_list_menu,menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.regimenDetailsFragment){
+            Log.d("TAG","ADD...");
+            return true;
+        }else {
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
 }
