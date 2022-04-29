@@ -5,6 +5,8 @@ import android.net.Uri;
 
 import androidx.annotation.NonNull;
 
+import com.example.babydiary.modelRegimen.ModelRegimen;
+import com.example.babydiary.modelRegimen.Regimen;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -17,7 +19,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.LinkedList;
 import java.util.List;
@@ -120,12 +121,14 @@ public class ModelFirebase {
                 });
     }
 
-
-
     public interface GetAllBabyDetailsListener{
         void onComplete(List<BabyDetails> list);
     }
 
+
+    public interface GetAllRegimenListener {
+        void onComplete(List<Regimen> list);
+    }
 
 }
 

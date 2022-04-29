@@ -36,6 +36,8 @@
         app:destination="@id/aboutFragment" />
 
 
+
+
     <fragment
         android:id="@+id/addBabyDetailsFragment"
         android:name="com.example.babydiary.feed.AddBabyDetailsFragment"
@@ -44,5 +46,27 @@
     <action
         android:id="@+id/action_global_addBabyDetailsFragment"
         app:destination="@id/addBabyDetailsFragment" />
+
+    <fragment
+        android:id="@+id/babyGalleryFragment2"
+        android:name="com.example.babydiary.feed.BabyGalleryFragment"
+        android:label="fragment_baby_gallery"
+        tools:layout="@layout/fragment_baby_gallery" />
+    <action android:id="@+id/action_global_babyGalleryFragment2" app:destination="@id/babyGalleryFragment2" />
+    <fragment
+        android:id="@+id/regimenFragment2"
+        android:name="com.example.babydiary.feed.RegimenFragment"
+        android:label="fragment_regimen"
+        tools:layout="@layout/fragment_regimen" >
+        <action
+            android:id="@+id/action_regimenFragment2_to_regimenDetailsFragment"
+            app:destination="@id/regimenDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/regimenDetailsFragment"
+        android:name="com.example.babydiary.feed.RegimenDetailsFragment"
+        android:label="fragment_regimen_details"
+        tools:layout="@layout/fragment_regimen_details" />
 
 </navigation>

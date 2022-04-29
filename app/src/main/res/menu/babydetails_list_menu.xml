@@ -5,6 +5,7 @@
     <item
         android:id="@+id/addBabyDetailsFragment"
         android:icon="@android:drawable/ic_input_add"
+        android:iconTint="@color/white"
         android:title="Add"
         app:showAsAction="always" />
 </menu>

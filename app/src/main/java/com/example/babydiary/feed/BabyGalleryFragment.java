@@ -42,9 +42,7 @@ public class BabyGalleryFragment extends Fragment {
         return fragment;
     }
 
-    public BabyGalleryFragment() {
-        // Required empty public constructor
-    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
