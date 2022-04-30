@@ -1,9 +1,7 @@
-package com.example.babydiary.modelRegimen;
+package com.example.babydiary.model;
 
 import androidx.annotation.NonNull;
 
-import com.example.babydiary.model.BabyDetails;
-import com.example.babydiary.model.ModelFirebase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;

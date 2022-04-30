@@ -1,4 +1,4 @@
-package com.example.babydiary.modelRegimen;
+package com.example.babydiary.model;
 
 import android.content.Context;
 import android.os.Handler;
@@ -10,8 +10,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.babydiary.MyApplication;
-import com.example.babydiary.model.AppLocalDb;
-import com.example.babydiary.model.ModelFirebase;
 
 import java.util.List;
 import java.util.concurrent.Executor;
@@ -53,7 +51,7 @@ public class ModelRegimen {
         Long lastUpdateDate= MyApplication.getContext().getSharedPreferences("TAG",Context.MODE_PRIVATE).getLong("RegimenUpdateDate",0);
 
         executor.execute(()->{
-            List<Regimen> rgList=AppLocalDbReg.db.regimenDao().getAll();
+            List<Regimen> rgList=AppLocalDb.db.regimenDao().getAll();
             regimenList.postValue(rgList);
         });
 
@@ -68,7 +66,7 @@ public class ModelRegimen {
                         Long lud=new Long(0);
                         Log.d("TAG","fb returned"+list.size());
                         for(Regimen regimen:list){
-                            AppLocalDbReg.db.regimenDao().insertAll(regimen);
+                            AppLocalDb.db.regimenDao().insertAll(regimen);
                             if(lud<regimen.getUpdateDate()){
                                 lud=regimen.getUpdateDate();
                             }
@@ -80,7 +78,7 @@ public class ModelRegimen {
                                 .putLong("RegimenLastUpdateDate",lud)
                                 .commit();
                         //return all date to caller
-                        List<Regimen> rgList=AppLocalDbReg.db.regimenDao().getAll();
+                        List<Regimen> rgList=AppLocalDb.db.regimenDao().getAll();
                         regimenList.postValue(rgList);
                         regimenListLoadingState.postValue(ModelRegimen.RegimenListLoadingState.loaded);
                     }

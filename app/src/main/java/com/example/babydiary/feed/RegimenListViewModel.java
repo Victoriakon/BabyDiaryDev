@@ -3,8 +3,8 @@ package com.example.babydiary.feed;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.babydiary.modelRegimen.ModelRegimen;
-import com.example.babydiary.modelRegimen.Regimen;
+import com.example.babydiary.model.ModelRegimen;
+import com.example.babydiary.model.Regimen;
 
 import java.util.List;
 

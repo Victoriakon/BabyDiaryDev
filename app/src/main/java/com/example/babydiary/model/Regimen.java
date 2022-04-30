@@ -1,4 +1,4 @@
-package com.example.babydiary.modelRegimen;
+package com.example.babydiary.model;
 
 import androidx.annotation.NonNull;
 import androidx.room.PrimaryKey;
@@ -63,11 +63,8 @@ public class Regimen {
         Timestamp ts=(Timestamp)json.get("updateDate");
         Long updateDate=ts.getSeconds();
 
-
-
         Regimen regimen=new Regimen(time,recomendation);
         regimen.setUpdateDate(updateDate);
-
         return regimen;
     }
 

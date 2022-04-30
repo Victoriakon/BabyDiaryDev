@@ -16,8 +16,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 
 import com.example.babydiary.R;
-import com.example.babydiary.modelRegimen.ModelRegimen;
-import com.example.babydiary.modelRegimen.Regimen;
+import com.example.babydiary.model.ModelRegimen;
+import com.example.babydiary.model.Regimen;
 
 
 public class RegimenDetailsFragment extends Fragment {

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -18,13 +17,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.example.babydiary.R;
-import com.example.babydiary.modelRegimen.ModelRegimen;
-import com.example.babydiary.modelRegimen.Regimen;
-import com.google.firebase.auth.internal.RecaptchaActivity;
+import com.example.babydiary.model.ModelRegimen;
+import com.example.babydiary.model.Regimen;
 
 
 public class RegimenFragment extends Fragment {

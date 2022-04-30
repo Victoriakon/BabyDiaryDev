@@ -5,8 +5,6 @@ import android.net.Uri;
 
 import androidx.annotation.NonNull;
 
-import com.example.babydiary.modelRegimen.ModelRegimen;
-import com.example.babydiary.modelRegimen.Regimen;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
