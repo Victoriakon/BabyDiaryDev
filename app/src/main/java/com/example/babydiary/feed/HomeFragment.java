@@ -17,7 +17,7 @@ import com.example.babydiary.model.User;
 import com.example.babydiary.model.UserViewModel;
 import com.squareup.picasso.Picasso;
 
-/
+
 public class HomeFragment extends Fragment {
 
     ImageButton desc;
@@ -44,11 +44,11 @@ public class HomeFragment extends Fragment {
         regim=view.findViewById(R.id.image_regim);
         gallery=view.findViewById(R.id.image_gallery);
 
-        desc.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyDetailsListRvFragment("Description",user_id)));
-        regim.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToRegimenFragment2("Regimen",user_id)));
-        gallery.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyGalleryFragment2("Gallery",user_id)));
+        desc.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyDetailsListRvFragment("Description")));
+        regim.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToRegimenListRvFragment("Regimen")));
+//        gallery.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyGalleryFragment2(()));
 
-        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+//        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         userViewModel.getUserById(user_id, new UserViewModel.GetUserListener() {
             @Override
             public void onComplete(User user) {

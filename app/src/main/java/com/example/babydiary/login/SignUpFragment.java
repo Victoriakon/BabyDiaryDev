@@ -92,7 +92,7 @@ public class SignUpFragment extends Fragment {
 //            }
 //        });
         login_btn.setOnClickListener(v -> {
-            Navigation.findNavController(v).navigate(SignUpFragmentDirections.SignUpFragmentToLogInFragment());
+            Navigation.findNavController(v).navigate(SignUpFragmentDirections.actionSignUpFragmentToLogInFragment());
         });
 
         email.setOnFocusChangeListener(new View.OnFocusChangeListener(){

@@ -5,7 +5,7 @@
 
 
     <item
-        android:id="@+id/addNewRegimen"
+        android:id="@+id/addRegimenDetailsFragment"
         android:icon="@android:drawable/ic_input_add"
         android:iconTintMode="src_atop"
         android:iconTint="@color/white"

@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.babydiary.R;
+import com.example.babydiary.feed.HomeFragmentArgs;
 import com.example.babydiary.model.Model;
 import com.example.babydiary.model.User;
 import com.example.babydiary.model.UserViewModel;
@@ -49,7 +50,7 @@ public class UserProfileFragment extends Fragment {
         nameEdit=view.findViewById(R.id.profile_name_et);
         logoutBtn=view.findViewById(R.id.profile_logout_btn);
         profileImage = view.findViewById(R.id.profile_imageView);
-        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+//        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         userViewModel.getUserById(user_id, new UserViewModel.GetUserListener() {
             @Override
             public void onComplete(User user) {

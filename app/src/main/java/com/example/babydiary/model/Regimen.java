@@ -1,6 +1,7 @@
 package com.example.babydiary.model;
 
 import androidx.annotation.NonNull;
+import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import com.google.firebase.Timestamp;
@@ -9,8 +10,10 @@ import com.google.firebase.firestore.FieldValue;
 import java.util.HashMap;
 import java.util.Map;
 
+@Entity
+
 public class Regimen {
-    public static final String COLLECTION_NAME = "babyregimen";
+    public static final String COLLECTION_NAME = "regimen";
 
     @PrimaryKey
     @NonNull

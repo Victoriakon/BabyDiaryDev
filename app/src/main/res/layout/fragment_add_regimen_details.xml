@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/pink3"
-    tools:context=".feed.RegimenDetailsFragment">
+    tools:context=".feed.AddRegimenDetailsFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -46,7 +46,8 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/time"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/time" />
+        app:layout_constraintStart_toEndOf="@+id/time"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/main_recomend_et"
@@ -59,7 +60,8 @@
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/recomendation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/recomendation" />
+        app:layout_constraintStart_toEndOf="@+id/recomendation"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
     <Button
@@ -69,8 +71,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="108dp"
         android:layout_marginEnd="4dp"
+        android:layout_marginBottom="80dp"
         android:text="CANCEL"
-
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/main_save_btn"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

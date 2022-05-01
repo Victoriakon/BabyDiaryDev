@@ -20,7 +20,7 @@ import com.example.babydiary.model.ModelRegimen;
 import com.example.babydiary.model.Regimen;
 
 
-public class RegimenDetailsFragment extends Fragment {
+public class AddRegimenDetailsFragment extends Fragment {
 
     EditText time;
     EditText recomendation;

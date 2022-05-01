@@ -28,7 +28,7 @@ public class ModelFirebaseReg {
     public void addRegimen(Regimen regimen, ModelRegimen.AddRegimenListener listener) {
         Map<String, Object> json = regimen.toJson();
         db.collection(Regimen.COLLECTION_NAME)
-                .document(regimen.getId())
+                .document(regimen.getTime())
                 .set(json)
                 .addOnSuccessListener(unused -> listener.onComplete())
                 .addOnFailureListener(e -> listener.onComplete());
