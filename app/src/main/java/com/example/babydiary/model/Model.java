@@ -21,7 +21,8 @@ public class Model {
     public static final Model instance = new Model();
     Executor executor=Executors.newFixedThreadPool(1);
     Handler mainThread =HandlerCompat.createAsync(Looper.getMainLooper());
-
+    public ModelFirebase modelFirebase=new ModelFirebase();
+    User signedUser;
 
     public enum BabyDetailsListLoadingState{
         loading,
@@ -33,7 +34,7 @@ public class Model {
     }
 
 
-    ModelFirebase modelFirebase=new ModelFirebase();
+
 
     private Model(){
         babydetailsListLoadingState.setValue(BabyDetailsListLoadingState.loaded);
@@ -135,4 +136,46 @@ public class Model {
         modelFirebase.saveImage(imageBitmap,imageName,listener);
 
     }
+    public interface AddUserListener {
+        void onComplete();
+    }
+
+    public void addUser(final User user, final AddUserListener listener) {
+        modelFirebase.addUser(user, new AddUserListener() {
+            @Override
+            public void onComplete() {
+
+                setSignedUser(user);
+                listener.onComplete();
+            }
+        });
+    }
+
+    public void updateUser(final User user, final AddUserListener listener) {
+        modelFirebase.updateUser(user, listener);
+    }
+    public interface AddCommentListener {
+        void onComplete();
+    }
+    public void uploadUserImage(Bitmap imageBmp, String name, final UploadUserImageListener listener) {
+        modelFirebase.uploadUserImage(imageBmp, name, listener);
+    }
+    public interface UploadUserImageListener {
+        void onComplete(String url);
+    }
+    public interface UploadImageListener {
+        void onComplete(String url);
+    }
+    public User getSignedUser() {
+        return signedUser;
+    }
+
+    public void setSignedUser(User signedUser) {
+        this.signedUser = signedUser;
+    }
+
+
+
+
+
 }
