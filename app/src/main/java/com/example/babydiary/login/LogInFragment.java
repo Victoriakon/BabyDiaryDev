@@ -49,7 +49,7 @@ public class LogInFragment extends Fragment {
                     .setHandleCodeInApp(true)
                     .setIOSBundleId("com.example.ios")
                     .setAndroidPackageName(
-                            "com.example.attractionsapp",
+                            "com.example.babydiary",
                             true, /* installIfNotAvailable */
                             "12"    /* minimumVersion */)
                     .build();

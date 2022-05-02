@@ -19,6 +19,8 @@ import com.squareup.picasso.Picasso;
 
 public class BabyDetailsFragment extends Fragment {
 
+    String user_id;
+
     TextView descTv;
     TextView monthTv;
     ImageView avatarImv;
@@ -29,6 +31,7 @@ public class BabyDetailsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_babydetails, container, false);
 
+        user_id=BabyDetailsFragmentArgs.fromBundle(getArguments()).getUserId();
 
 
         String babyId=BabyDetailsFragmentArgs.fromBundle(getArguments()).getBabyDet();

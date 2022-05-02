@@ -20,6 +20,21 @@ public class Regimen {
     String time="" ;
     String recomendation="";
     Long updateDate=new Long(0);
+    String userId="";
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+
+
+
+
+
 
     public Long getUpdateDate() {
         return updateDate;
@@ -56,6 +71,7 @@ public class Regimen {
         json.put("time", time);
         json.put("recomendation", recomendation);
         json.put("updateDate", FieldValue.serverTimestamp());
+        json.put("userId",userId);
 
         return json;
     }
@@ -65,6 +81,7 @@ public class Regimen {
         String recomendation = (String) json.get("recomendation");
         Timestamp ts=(Timestamp)json.get("updateDate");
         Long updateDate=ts.getSeconds();
+        String userId=(String) json.get("userId");
 
         Regimen regimen=new Regimen(time,recomendation);
         regimen.setUpdateDate(updateDate);

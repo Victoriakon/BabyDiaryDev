@@ -50,7 +50,7 @@ public class UserProfileFragment extends Fragment {
         nameEdit=view.findViewById(R.id.profile_name_et);
         logoutBtn=view.findViewById(R.id.profile_logout_btn);
         profileImage = view.findViewById(R.id.profile_imageView);
-//        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         userViewModel.getUserById(user_id, new UserViewModel.GetUserListener() {
             @Override
             public void onComplete(User user) {

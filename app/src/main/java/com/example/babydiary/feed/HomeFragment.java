@@ -44,11 +44,11 @@ public class HomeFragment extends Fragment {
         regim=view.findViewById(R.id.image_regim);
         gallery=view.findViewById(R.id.image_gallery);
 
-        desc.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyDetailsListRvFragment("Description")));
-        regim.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToRegimenListRvFragment("Regimen")));
+        desc.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyDetailsListRvFragment(user_id)));
+        regim.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToRegimenListRvFragment(user_id)));
 //        gallery.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyGalleryFragment2(()));
 
-//        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         userViewModel.getUserById(user_id, new UserViewModel.GetUserListener() {
             @Override
             public void onComplete(User user) {
@@ -62,7 +62,6 @@ public class HomeFragment extends Fragment {
         });
 
         profile.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToUserProfileFragment(user_id)));
-
         return view;
     }
 }

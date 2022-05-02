@@ -14,12 +14,12 @@
     <action
         android:id="@+id/action_babyDetailsListRvFragment_to_babyDetailsFragment"
         app:destination="@id/babyDetailsFragment" />
-        <argument
-            android:name="userId"
-            app:argType="string" />
         <action
             android:id="@+id/action_babyDetailsListRvFragment_to_addBabyDetailsFragment"
             app:destination="@id/addBabyDetailsFragment" />
+        <argument
+            android:name="userId"
+            app:argType="string" />
     </fragment>
 
     <fragment
@@ -30,7 +30,10 @@
         <argument
         android:name="babyDet"
         app:argType="string" />
-</fragment>
+        <argument
+            android:name="userId"
+            app:argType="string" />
+    </fragment>
 
     <fragment
         android:id="@+id/aboutFragment"
@@ -124,6 +127,9 @@
         tools:layout="@layout/fragment_regimen" >
         <argument
             android:name="regDet"
+            app:argType="string" />
+        <argument
+            android:name="userId"
             app:argType="string" />
     </fragment>
     <fragment

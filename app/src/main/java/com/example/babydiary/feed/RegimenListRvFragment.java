@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -29,7 +30,7 @@ public class RegimenListRvFragment extends Fragment {
     RegimenListViewModel viewModel;
     BabyDetailsListRvFragment.MyAdapter adapter;
     SwipeRefreshLayout swipeRefresh;
-//    String user_id;
+    String user_id;
 
     @Override
     public void onAttach(@NonNull Context context){
@@ -44,12 +45,31 @@ public class RegimenListRvFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view= inflater.inflate(R.layout.fragment_regimen_list_rv, container, false);
-//        user_id=BabyDetailsFragmentArgs.fromBundle(getArguments().get);
+
+        user_id=RegimenListRvFragmentArgs.fromBundle(getArguments()).getUserId();
         swipeRefresh=view.findViewById(R.id.regimen_swiperefresh);
         swipeRefresh.setOnRefreshListener(()-> ModelRegimen.instance.refreshRegimenList());
 
         RecyclerView list=view.findViewById(R.id.regimen_rv);
         list.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
+
+        list.setLayoutManager(new LinearLayoutManager(getContext()));
+
+//        adapter = new RegimenListRvFragment().MyAdapter();
+//        list.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new BabyDetailsListRvFragment.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                String regId = viewModel.getData().getValue().get(position).getTime();
+//                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(babyId));
+                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(regId,user_id));
+
+            }
+        });
+
 
         setHasOptionsMenu(true);
         viewModel.getData().observe(getViewLifecycleOwner(),list1->refresh());

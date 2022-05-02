@@ -17,6 +17,23 @@ public class BabyDetails {
       @NonNull
       String month_id="" ;
       String description="";
+      String image;
+
+      public String getUserId() {
+            return userId;
+      }
+
+      public void setUserId(String userId) {
+            this.userId = userId;
+      }
+
+      String userId="";
+
+      public BabyDetails(String userId) {
+            this.userId = userId;
+      }
+
+
 
       public Long getUpdateDate() {
             return updateDate;
@@ -34,7 +51,7 @@ public class BabyDetails {
             return image;
       }
 
-      String image;
+
 
 
       public  void setUpdateDate(Long updateDate){ this.updateDate=updateDate;}
@@ -53,6 +70,7 @@ public class BabyDetails {
             Timestamp ts=(Timestamp)json.get("updateDate");
             Long updateDate=ts.getSeconds();
             String image = (String) json.get("image");
+            String userId=(String) json.get("userId");
 
 
             BabyDetails babydetails=new BabyDetails(month_id,description);
@@ -84,6 +102,7 @@ public class BabyDetails {
             json.put("description", description);
             json.put("updateDate", FieldValue.serverTimestamp());
             json.put("image",image);
+            json.put("userId", userId);
             return json;
       }
 }

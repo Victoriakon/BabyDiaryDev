@@ -33,11 +33,13 @@ import java.util.List;
 
 public class BabyDetailsListRvFragment extends Fragment {
 
-//    List<BabyDetails> data;
     BabyDetailsListRvViewModel viewModel;
     MyAdapter adapter;
-//    ProgressBar progressBar;
     SwipeRefreshLayout swipeRefresh;
+    String user_id;
+    String selected_menu;
+
+    ImageView imagev;
 
     @Override
     public  void onAttach(@NonNull Context context){
@@ -50,6 +52,8 @@ public class BabyDetailsListRvFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_babydetails_list_rv, container, false);
+
+        user_id=BabyDetailsFragmentArgs.fromBundle(getArguments()).getUserId();
 
         swipeRefresh = view.findViewById(R.id.babydetails_swiperefresh);
         swipeRefresh.setOnRefreshListener(() -> Model.instance.refreshBabyDetailsList());
@@ -69,7 +73,7 @@ public class BabyDetailsListRvFragment extends Fragment {
             public void onItemClick(View v, int position) {
                 String babyId = viewModel.getData().getValue().get(position).getMonth_id();
 //                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(babyId));
-                  Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(babyId));
+                  Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(babyId,user_id));
 
             }
         });
