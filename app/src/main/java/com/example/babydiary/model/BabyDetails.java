@@ -2,6 +2,7 @@ package com.example.babydiary.model;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import com.google.firebase.Timestamp;
@@ -18,6 +19,8 @@ public class BabyDetails {
       String month_id="" ;
       String description="";
       String image;
+      String userId="";
+      Long updateDate=new Long(0);
 
       public String getUserId() {
             return userId;
@@ -27,7 +30,6 @@ public class BabyDetails {
             this.userId = userId;
       }
 
-      String userId="";
 
       public BabyDetails(String userId) {
             this.userId = userId;
@@ -41,7 +43,6 @@ public class BabyDetails {
 
 
 
-      Long updateDate=new Long(0);
 
       public void setImage(String url) {
             image = url;

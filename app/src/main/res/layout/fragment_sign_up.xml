@@ -174,7 +174,7 @@
         android:layout_height="93dp"
         android:scaleType="centerCrop"
         android:src="@drawable/cam_img"
-        android:backgroundTint="@color/pink3"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="@+id/signup_img"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.793"

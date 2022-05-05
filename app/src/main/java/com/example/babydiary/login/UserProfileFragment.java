@@ -71,7 +71,7 @@ public class UserProfileFragment extends Fragment {
         });
 
         editBtn.setOnClickListener((v)->{
-//            Navigation.findNavController(v).navigate(UserProfileFragmentDirections.actionUserProfileFragmentToEditProfileFragment(user_id));
+//            Navigation.findNavController(v).navigate(UserProfileFragmentDirections.actionUserProfileFragmentToLogInFragment());
             save();
         });
 

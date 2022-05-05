@@ -46,7 +46,7 @@ public class HomeFragment extends Fragment {
 
         desc.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyDetailsListRvFragment(user_id)));
         regim.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToRegimenListRvFragment(user_id)));
-//        gallery.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyGalleryFragment2(()));
+        gallery.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyGalleryFragment2(user_id)));
 
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         userViewModel.getUserById(user_id, new UserViewModel.GetUserListener() {
@@ -60,6 +60,8 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
+
+//        desc.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyDetailsListRvFragment(user_id)));
 
         profile.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToUserProfileFragment(user_id)));
         return view;

@@ -6,7 +6,7 @@ import androidx.room.RoomDatabase;
 
 import com.example.babydiary.MyApplication;
 
-@Database(entities = {BabyDetails.class,Regimen.class},version = 4)
+@Database(entities = {BabyDetails.class,Regimen.class},version = 5)
 abstract class AppLocalDbRepository extends RoomDatabase {
      public abstract BabyDetailsDao babydetailsDao();
      public abstract RegimenDao regimenDao();

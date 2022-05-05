@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
     android:background="@color/pink3"
     tools:context=".feed.HomeFragment">
 
@@ -75,6 +77,7 @@
         android:layout_height="100dp"
         android:scaleType="centerCrop"
         android:src="@drawable/description"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.455"
@@ -90,6 +93,7 @@
         android:layout_marginBottom="8dp"
         android:scaleType="centerCrop"
         android:src="@drawable/regimen"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toTopOf="@+id/image_gallery"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
@@ -106,6 +110,7 @@
         android:layout_marginBottom="8dp"
         android:scaleType="centerCrop"
         android:src="@drawable/gallery"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.457"

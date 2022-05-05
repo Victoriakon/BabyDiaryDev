@@ -18,7 +18,7 @@
             android:id="@+id/action_babyDetailsListRvFragment_to_addBabyDetailsFragment"
             app:destination="@id/addBabyDetailsFragment" />
         <argument
-            android:name="userId"
+            android:name="babyId"
             app:argType="string" />
     </fragment>
 
@@ -30,9 +30,6 @@
         <argument
         android:name="babyDet"
         app:argType="string" />
-        <argument
-            android:name="userId"
-            app:argType="string" />
     </fragment>
 
     <fragment
@@ -60,7 +57,14 @@
         android:id="@+id/babyGalleryFragment2"
         android:name="com.example.babydiary.feed.BabyGalleryFragment"
         android:label="fragment_baby_gallery"
-        tools:layout="@layout/fragment_baby_gallery" />
+        tools:layout="@layout/fragment_baby_gallery" >
+        <argument
+            android:name="userId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_babyGalleryFragment2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <action android:id="@+id/action_global_babyGalleryFragment2" app:destination="@id/babyGalleryFragment2" />
 
     <fragment

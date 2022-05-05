@@ -65,7 +65,7 @@ public class RegimenListRvFragment extends Fragment {
             public void onItemClick(View v, int position) {
                 String regId = viewModel.getData().getValue().get(position).getTime();
 //                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(babyId));
-                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(regId,user_id));
+                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(regId));
 
             }
         });

@@ -36,7 +36,7 @@ public class BabyDetailsListRvFragment extends Fragment {
     BabyDetailsListRvViewModel viewModel;
     MyAdapter adapter;
     SwipeRefreshLayout swipeRefresh;
-    String user_id;
+//    String user_id;
     String selected_menu;
 
     ImageView imagev;
@@ -53,7 +53,7 @@ public class BabyDetailsListRvFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_babydetails_list_rv, container, false);
 
-        user_id=BabyDetailsFragmentArgs.fromBundle(getArguments()).getUserId();
+//        user_id=BabyDetailsFragmentArgs.fromBundle(getArguments()).getUserId();
 
         swipeRefresh = view.findViewById(R.id.babydetails_swiperefresh);
         swipeRefresh.setOnRefreshListener(() -> Model.instance.refreshBabyDetailsList());
@@ -71,9 +71,10 @@ public class BabyDetailsListRvFragment extends Fragment {
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
-                String babyId = viewModel.getData().getValue().get(position).getMonth_id();
+//                String babyId = viewModel.getData().getValue().get(position).getMonth_id();
+               String babyId=viewModel.getData().getValue().get(position).getMonth_id();
 //                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(babyId));
-                  Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(babyId,user_id));
+                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(babyId));
 
             }
         });
@@ -96,12 +97,12 @@ public class BabyDetailsListRvFragment extends Fragment {
 
     private void refresh() {
 //
-            adapter.notifyDataSetChanged();
-            swipeRefresh.setRefreshing(false);
+        adapter.notifyDataSetChanged();
+        swipeRefresh.setRefreshing(false);
 //
     }
 
-//
+    //
     class MyViewHolder extends RecyclerView.ViewHolder{
         TextView descTv;
         TextView monthTv;
