@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/babydetails_nav_graph"
+    app:startDestination="@id/babyDetailsListRvFragment">
+
+    <fragment
+        android:id="@+id/addBabyDetailsFragment"
+        android:name="com.example.babydiary.feed.AddBabyDetailsFragment"
+        android:label="fragment_add_babydetails"
+        tools:layout="@layout/fragment_add_babydetails" />
+    <action android:id="@+id/action_global_addBabyDetailsFragment"
+        app:destination="@id/addBabyDetailsFragment" />
+
+    <fragment
+        android:id="@+id/babyDetailsFragment"
+        android:name="com.example.babydiary.feed.BabyDetailsFragment"
+        android:label="fragment_babydetails"
+        tools:layout="@layout/fragment_babydetails" >
+        <argument
+            android:name="babyDet"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/babyDetailsListRvFragment"
+        android:name="com.example.babydiary.feed.BabyDetailsListRvFragment"
+        android:label="BabyDetailsListRvFragment" >
+        <action
+            android:id="@+id/action_babyDetailsListRvFragment_to_babyDetailsFragment"
+            app:destination="@id/babyDetailsFragment" />
+    </fragment>
+</navigation>

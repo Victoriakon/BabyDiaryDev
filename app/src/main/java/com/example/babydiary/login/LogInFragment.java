@@ -25,6 +25,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.ActionCodeSettings;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.nostra13.universalimageloader.utils.L;
 
 
 public class LogInFragment extends Fragment {
@@ -69,7 +70,8 @@ public class LogInFragment extends Fragment {
         });
         signup_btn = view.findViewById(R.id.login_signin_btn);
         signup_btn.setOnClickListener(v -> {
-            Navigation.findNavController(v).navigate(LogInFragmentDirections.actionLogInFragmentToSignUpFragment());
+//            Navigation.findNavController(v).navigate(LogInFragmentDirections.actionLogInFragmentToSignUpFragment());
+      Navigation.findNavController(v).navigate(LogInFragmentDirections.actionLogInFragmentToSignUpFragment());
         });
 
         email_et.setOnFocusChangeListener(new View.OnFocusChangeListener(){

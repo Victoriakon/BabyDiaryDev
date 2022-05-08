@@ -41,13 +41,13 @@ public class BabyGalleryFragment extends Fragment {
         camBtn=view.findViewById(R.id.main_cam_btn);
         galleryBtn=view.findViewById(R.id.main_gallery_btn);
 
-        user_id=HomeFragmentArgs.fromBundle(getArguments()).getUserId();
+//        user_id=HomeFragmentArgs.fromBundle(getArguments()).getUserId();
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 save();
-                Navigation.findNavController(v).navigate(BabyGalleryFragmentDirections.actionBabyGalleryFragment2ToHomeFragment(user_id));
+//                Navigation.findNavController(v).navigate(BabyGalleryFragmentDirections.actionBabyGalleryFragment2ToHomeFragment(user_id));
             }
         });
         camBtn=view.findViewById(R.id.main_cam_btn);

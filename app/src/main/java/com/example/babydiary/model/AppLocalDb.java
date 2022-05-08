@@ -12,8 +12,6 @@ abstract class AppLocalDbRepository extends RoomDatabase {
      public abstract RegimenDao regimenDao();
 }
 
-
-
 public class AppLocalDb {
     static public AppLocalDbRepository db =
             Room.databaseBuilder(MyApplication.getContext(),

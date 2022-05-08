@@ -38,16 +38,22 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
         String user_id = HomeFragmentArgs.fromBundle(getArguments()).getUserId();
+
         profile=view.findViewById(R.id.home_profile_imv);
         desc=view.findViewById(R.id.image_desc);
         regim=view.findViewById(R.id.image_regim);
         gallery=view.findViewById(R.id.image_gallery);
 
-        desc.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyDetailsListRvFragment(user_id)));
-        regim.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToRegimenListRvFragment(user_id)));
-        gallery.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyGalleryFragment2(user_id)));
+//        desc.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyDetailsListRvFragment()));
+//        regim.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToRegimenListRvFragment(user_id)));
+//        gallery.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyGalleryFragment2(user_id)));
 
+//        desc.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyDetailsListRvFragment()));
+//            desc.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabydetailsNavGraph()));
+
+        desc.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabydetailsNavGraph2()));
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         userViewModel.getUserById(user_id, new UserViewModel.GetUserListener() {
             @Override

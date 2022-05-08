@@ -11,6 +11,7 @@ import java.util.List;
 public class BabyDetailsListRvViewModel extends ViewModel {
     LiveData<List<BabyDetails>> data;
 
+
     public  BabyDetailsListRvViewModel(){data= Model.instance.getAll(); }
     public  LiveData<List<BabyDetails>> getData(){return data;}
 }

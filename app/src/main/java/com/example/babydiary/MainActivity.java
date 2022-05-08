@@ -15,6 +15,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.babydiary.login.LoginActivity;
+
 public class MainActivity extends AppCompatActivity {
 
          private static int SPLASH_SCREEN = 5000;
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         new Handler().postDelayed(() -> {
 //            Intent intent=new Intent(MainActivity.this, LoginActivity.class);
-            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+            Intent intent = new Intent(MainActivity.this,LoginActivity.class);
             Pair[] pairs = new Pair[2];
             pairs[0] = new Pair<View, String>(image, "logo_image");
             pairs[1] = new Pair<View, String>(logo, "logo_text");
@@ -52,9 +54,15 @@ public class MainActivity extends AppCompatActivity {
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, pairs);
                 startActivity(intent, options.toBundle());
             }
+
         }, SPLASH_SCREEN);
 
 
+    }
+    private void toFeedActivity(){
+        Intent intent=new Intent(this,MainActivity2.class);
+        startActivity(intent);
+        finish();
     }
 
 }

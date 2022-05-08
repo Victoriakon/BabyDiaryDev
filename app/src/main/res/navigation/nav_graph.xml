@@ -2,25 +2,8 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/signUpFragment">
+    android:id="@+id/nav_graph">
 
-
-    <fragment
-        android:id="@+id/babyDetailsListRvFragment"
-        android:name="com.example.babydiary.feed.BabyDetailsListRvFragment"
-        android:label="BabyDetails"
-        tools:layout="@layout/fragment_babydetails_list_rv">
-    <action
-        android:id="@+id/action_babyDetailsListRvFragment_to_babyDetailsFragment"
-        app:destination="@id/babyDetailsFragment" />
-        <action
-            android:id="@+id/action_babyDetailsListRvFragment_to_addBabyDetailsFragment"
-            app:destination="@id/addBabyDetailsFragment" />
-        <argument
-            android:name="babyId"
-            app:argType="string" />
-    </fragment>
 
     <fragment
     android:id="@+id/babyDetailsFragment"
@@ -61,69 +44,9 @@
         <argument
             android:name="userId"
             app:argType="string" />
-        <action
-            android:id="@+id/action_babyGalleryFragment2_to_homeFragment"
-            app:destination="@id/homeFragment" />
     </fragment>
     <action android:id="@+id/action_global_babyGalleryFragment2" app:destination="@id/babyGalleryFragment2" />
 
-    <fragment
-        android:id="@+id/signUpFragment"
-        android:name="com.example.babydiary.login.SignUpFragment"
-        android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" >
-        <action
-            android:id="@+id/action_signUpFragment_to_logInFragment"
-            app:destination="@id/logInFragment" />
-        <action
-            android:id="@+id/action_signUpFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/logInFragment"
-        android:name="com.example.babydiary.login.LogInFragment"
-        android:label="fragment_log_in"
-        tools:layout="@layout/fragment_log_in" >
-        <action
-            android:id="@+id/action_logInFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
-        <action
-            android:id="@+id/action_logInFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/userProfileFragment"
-        android:name="com.example.babydiary.login.UserProfileFragment"
-        android:label="fragment_user_profile"
-        tools:layout="@layout/fragment_user_profile" >
-        <argument
-            android:name="userId"
-            app:argType="string" />
-        <action
-            android:id="@+id/action_userProfileFragment_to_logInFragment"
-            app:destination="@id/logInFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.babydiary.feed.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <argument
-            android:name="userId"
-            app:argType="string" />
-        <action
-            android:id="@+id/action_homeFragment_to_userProfileFragment"
-            app:destination="@id/userProfileFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_babyDetailsListRvFragment"
-            app:destination="@id/babyDetailsListRvFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_babyGalleryFragment2"
-            app:destination="@id/babyGalleryFragment2" />
-        <action
-            android:id="@+id/action_homeFragment_to_regimenListRvFragment"
-            app:destination="@id/regimenListRvFragment" />
-    </fragment>
     <fragment
         android:id="@+id/regimenFragment2"
         android:name="com.example.babydiary.feed.RegimenFragment"
@@ -135,21 +58,6 @@
         <argument
             android:name="userId"
             app:argType="string" />
-    </fragment>
-    <fragment
-        android:id="@+id/regimenListRvFragment"
-        android:name="com.example.babydiary.feed.RegimenListRvFragment"
-        android:label="fragment_regimen_list_rv"
-        tools:layout="@layout/fragment_regimen_list_rv" >
-        <argument
-            android:name="userId"
-            app:argType="string" />
-        <action
-            android:id="@+id/action_regimenListRvFragment_to_regimenFragment2"
-            app:destination="@id/regimenFragment2" />
-        <action
-            android:id="@+id/action_regimenListRvFragment_to_addRegimenDetailsFragment"
-            app:destination="@id/addRegimenDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/addRegimenDetailsFragment"

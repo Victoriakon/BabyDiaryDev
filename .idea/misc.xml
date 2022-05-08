@@ -5,19 +5,22 @@
       <map>
         <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/activity_base.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/activity_login.xml" value="0.14266304347826086" />
         <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/activity_main.xml" value="0.165625" />
         <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/activity_main2.xml" value="0.1796875" />
+        <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/activity_regimen.xml" value="0.14266304347826086" />
         <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/baby_details_list_row.xml" value="0.1796875" />
         <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/babydetails_list_row.xml" value="0.1796875" />
         <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/fragment_about.xml" value="0.1796875" />
         <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/fragment_add_babydetails.xml" value="0.1796875" />
+        <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/fragment_add_regimen_details.xml" value="0.14266304347826086" />
         <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/fragment_baby_details.xml" value="0.1796875" />
         <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/fragment_baby_details_fragment.xml" value="0.165625" />
         <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/fragment_baby_details_list.xml" value="0.165625" />
         <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/fragment_baby_gallery.xml" value="0.15579710144927536" />
         <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/fragment_babydetails.xml" value="0.14666666666666667" />
-        <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/fragment_babydetails_list_rv.xml" value="0.25" />
-        <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/fragment_babydetails_list_rv.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/fragment_home.xml" value="0.12" />
         <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/fragment_item.xml" value="0.1796875" />
         <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/fragment_log_in.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/larik/BabyDiaryDev/app/src/main/res/layout/fragment_regimen.xml" value="0.22" />

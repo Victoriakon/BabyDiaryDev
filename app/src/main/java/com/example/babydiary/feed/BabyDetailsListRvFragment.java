@@ -36,7 +36,7 @@ public class BabyDetailsListRvFragment extends Fragment {
     BabyDetailsListRvViewModel viewModel;
     MyAdapter adapter;
     SwipeRefreshLayout swipeRefresh;
-//    String user_id;
+    //    String user_id;
     String selected_menu;
 
     ImageView imagev;
@@ -45,7 +45,7 @@ public class BabyDetailsListRvFragment extends Fragment {
     public  void onAttach(@NonNull Context context){
         super.onAttach(context);
         viewModel=new ViewModelProvider(this).get(BabyDetailsListRvViewModel.class);
-    }
+         }
 
 
     @Nullable
@@ -72,10 +72,12 @@ public class BabyDetailsListRvFragment extends Fragment {
             @Override
             public void onItemClick(View v, int position) {
 //                String babyId = viewModel.getData().getValue().get(position).getMonth_id();
-               String babyId=viewModel.getData().getValue().get(position).getMonth_id();
+//                String babyId=viewModel.getData().getValue().get(position).getMonth_id();
+                String babyId=viewModel.getData().getValue().get(position).getMonth_id();
 //                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(babyId));
-                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(babyId));
+//                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(babyId));
 
+                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(babyId));
             }
         });
 

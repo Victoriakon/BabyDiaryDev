@@ -30,7 +30,7 @@ public class RegimenListRvFragment extends Fragment {
     RegimenListViewModel viewModel;
     BabyDetailsListRvFragment.MyAdapter adapter;
     SwipeRefreshLayout swipeRefresh;
-    String user_id;
+//    String user_id;
 
     @Override
     public void onAttach(@NonNull Context context){
@@ -46,7 +46,7 @@ public class RegimenListRvFragment extends Fragment {
 
         View view= inflater.inflate(R.layout.fragment_regimen_list_rv, container, false);
 
-        user_id=RegimenListRvFragmentArgs.fromBundle(getArguments()).getUserId();
+//        user_id=RegimenListRvFragmentArgs.fromBundle(getArguments()).getUserId();
         swipeRefresh=view.findViewById(R.id.regimen_swiperefresh);
         swipeRefresh.setOnRefreshListener(()-> ModelRegimen.instance.refreshRegimenList());
 
@@ -65,8 +65,9 @@ public class RegimenListRvFragment extends Fragment {
             public void onItemClick(View v, int position) {
                 String regId = viewModel.getData().getValue().get(position).getTime();
 //                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(babyId));
-                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(regId));
+//                Navigation.findNavController(v).navigate(BabyDetailsListRvFragmentDirections.actionBabyDetailsListRvFragmentToBabyDetailsFragment(regId));
 
+                Navigation.findNavController(v).navigate(RegimenListRvFragmentDirections.actionRegimenListRvFragmentToRegimenFragment(regId));
             }
         });
 

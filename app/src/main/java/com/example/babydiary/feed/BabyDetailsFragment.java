@@ -34,6 +34,9 @@ public class BabyDetailsFragment extends Fragment {
 //        user_id=BabyDetailsFragmentArgs.fromBundle(getArguments()).getUserId();
 
 
+//        String babyId=BabyDetailsFragmentArgs.fromBundle(getArguments()).getBabyDet();
+//        String babyId=BabyDetailsFragmentArgs.fromBundle(getArguments()).getBabyDet();
+
         String babyId=BabyDetailsFragmentArgs.fromBundle(getArguments()).getBabyDet();
 //        BabyDetails babydetails = Model.instance.getBabyDetailsById(babyId);
         Model.instance.getBabyDetailsById(babyId,new Model.GetBabyDetailsById(){

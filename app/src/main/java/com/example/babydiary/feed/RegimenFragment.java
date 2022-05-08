@@ -22,7 +22,7 @@ import com.squareup.picasso.Picasso;
 
 public class RegimenFragment extends Fragment {
 
-    String user_id;
+//    String user_id;
 
     TextView time;
     TextView recomendation;
@@ -34,9 +34,10 @@ public class RegimenFragment extends Fragment {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_regimen, container, false);
 
-        user_id=RegimenFragmentArgs.fromBundle(getArguments()).getUserId();
+//        user_id=RegimenFragmentArgs.fromBundle(getArguments()).getUserId();
 
 
+//        String regId=RegimenFragmentArgs.fromBundle(getArguments()).getRegDet();
         String regId=RegimenFragmentArgs.fromBundle(getArguments()).getRegDet();
         ModelRegimen.instance.getRegimenById(regId, new ModelRegimen.GetRegimenById() {
             @Override

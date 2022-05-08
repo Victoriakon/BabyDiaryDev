@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/regimen_nav_graph"
+    app:startDestination="@id/regimenListRvFragment">
+
+    <fragment
+        android:id="@+id/regimenListRvFragment"
+        android:name="com.example.babydiary.feed.RegimenListRvFragment"
+        android:label="fragment_regimen_list_rv"
+        tools:layout="@layout/fragment_regimen_list_rv" >
+        <action
+            android:id="@+id/action_regimenListRvFragment_to_regimenFragment"
+            app:destination="@id/regimenFragment" />
+        <action
+            android:id="@+id/action_regimenListRvFragment_to_addRegimenDetailsFragment"
+            app:destination="@id/addRegimenDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addRegimenDetailsFragment"
+        android:name="com.example.babydiary.feed.AddRegimenDetailsFragment"
+        android:label="fragment_add_regimen_details"
+        tools:layout="@layout/fragment_add_regimen_details" />
+    <action android:id="@+id/action_global_addRegimenFragment"
+        app:destination="@id/addRegimenDetailsFragment" />
+
+    <fragment
+        android:id="@+id/regimenFragment"
+        android:name="com.example.babydiary.feed.RegimenFragment"
+        android:label="fragment_regimen"
+        tools:layout="@layout/fragment_regimen" >
+        <argument
+            android:name="regDet"
+            app:argType="string" />
+    </fragment>
+</navigation>
