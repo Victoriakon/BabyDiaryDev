@@ -143,7 +143,7 @@ public class SignUpFragment extends Fragment {
     public void save() {
         Log.d("TAG","inside save");
         submit_btn.setEnabled(false);
-        login_btn.setEnabled(false);
+//        login_btn.setEnabled(false);
         name_usr = name.getText().toString();
         email_usr = email.getText().toString();
         password_usr = password.getText().toString();
@@ -185,10 +185,6 @@ public class SignUpFragment extends Fragment {
             });
 
         }
-
-
-
-
 
     }
     void popMsg(String Msg) {

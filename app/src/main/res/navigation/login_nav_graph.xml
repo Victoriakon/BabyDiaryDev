@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_nav_graph"
-    app:startDestination="@id/signUpFragment">
+    app:startDestination="@id/logInFragment">
 
     <fragment
         android:id="@+id/signUpFragment"
@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_userProfileFragment_to_logInFragment"
             app:destination="@id/logInFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -53,8 +56,21 @@
             android:id="@+id/action_homeFragment_to_userProfileFragment"
             app:destination="@id/userProfileFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_babydetails_nav_graph2"
+            android:id="@+id/action_homeFragment_to_babydetails_nav_graph"
             app:destination="@id/babydetails_nav_graph" />
+        <action
+            android:id="@+id/action_homeFragment_to_babyGalleryFragment3"
+            app:destination="@id/babyGalleryFragment3" />
     </fragment>
-    <include app:graph="@navigation/babydetails_nav_graph" />
+    <include app:graph="@navigation/babydetails_nav_graph"
+         />
+    <fragment
+        android:id="@+id/babyGalleryFragment3"
+        android:name="com.example.babydiary.feed.BabyGalleryFragment"
+        android:label="fragment_baby_gallery"
+        tools:layout="@layout/fragment_baby_gallery" >
+        <argument
+            android:name="userId"
+            app:argType="string" />
+    </fragment>
 </navigation>

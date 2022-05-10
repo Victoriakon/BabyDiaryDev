@@ -18,7 +18,7 @@ import com.example.babydiary.model.UserViewModel;
 import com.squareup.picasso.Picasso;
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements View.OnClickListener{
 
     ImageButton desc;
     ImageButton regim;
@@ -48,12 +48,15 @@ public class HomeFragment extends Fragment {
 
 //        desc.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyDetailsListRvFragment()));
 //        regim.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToRegimenListRvFragment(user_id)));
-//        gallery.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyGalleryFragment2(user_id)));
+        gallery.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyGalleryFragment3(user_id)));
+        desc.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabydetailsNavGraph()));
 
 //        desc.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyDetailsListRvFragment()));
 //            desc.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabydetailsNavGraph()));
 
-        desc.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabydetailsNavGraph2()));
+//        desc.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabydetailsNavGraph2()));
+
+
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         userViewModel.getUserById(user_id, new UserViewModel.GetUserListener() {
             @Override
@@ -71,5 +74,10 @@ public class HomeFragment extends Fragment {
 
         profile.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToUserProfileFragment(user_id)));
         return view;
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }

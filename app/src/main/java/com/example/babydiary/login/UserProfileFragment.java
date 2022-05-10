@@ -42,7 +42,7 @@ public class UserProfileFragment extends Fragment {
 
 
         view = inflater.inflate(R.layout.fragment_user_profile, container, false);
-//        user_id = HomeFragmentArgs.fromBundle(getArguments()).getUserId();
+        user_id = UserProfileFragmentArgs.fromBundle(getArguments()).getUserId();
 
         editBtn = view.findViewById(R.id.profileF_editInfoBtn);
         name = view.findViewById(R.id.profileF_name);
@@ -69,11 +69,10 @@ public class UserProfileFragment extends Fragment {
         logoutBtn.setOnClickListener((v)->{
             userViewModel.logOut();
             Navigation.findNavController(v).navigate(UserProfileFragmentDirections.actionUserProfileFragmentToLogInFragment());
-//            Navigation.findNavController(v).navigate();
-        });
+      });
 
         editBtn.setOnClickListener((v)->{
-            Navigation.findNavController(v).navigate(UserProfileFragmentDirections.actionUserProfileFragmentToLogInFragment());
+//            Navigation.findNavController(v).navigate(UserProfileFragmentDirections.actionUserProfileFragmentToHomeFragment(user_id));
             save();
         });
 

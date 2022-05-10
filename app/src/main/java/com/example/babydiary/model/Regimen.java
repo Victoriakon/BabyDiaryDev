@@ -30,12 +30,6 @@ public class Regimen {
         this.userId = userId;
     }
 
-
-
-
-
-
-
     public Long getUpdateDate() {
         return updateDate;
     }
