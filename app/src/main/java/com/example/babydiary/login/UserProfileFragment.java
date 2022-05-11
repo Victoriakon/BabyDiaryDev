@@ -69,7 +69,7 @@ public class UserProfileFragment extends Fragment {
         logoutBtn.setOnClickListener((v)->{
             userViewModel.logOut();
             Navigation.findNavController(v).navigate(UserProfileFragmentDirections.actionUserProfileFragmentToLogInFragment());
-      });
+        });
 
         editBtn.setOnClickListener((v)->{
 //            Navigation.findNavController(v).navigate(UserProfileFragmentDirections.actionUserProfileFragmentToHomeFragment(user_id));

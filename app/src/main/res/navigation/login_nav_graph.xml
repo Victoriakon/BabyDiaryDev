@@ -56,14 +56,15 @@
             android:id="@+id/action_homeFragment_to_userProfileFragment"
             app:destination="@id/userProfileFragment" />
         <action
+            android:id="@+id/action_homeFragment_to_babyGalleryFragment3"
+            app:destination="@id/babyGalleryFragment3" />
+        <action
             android:id="@+id/action_homeFragment_to_babydetails_nav_graph"
             app:destination="@id/babydetails_nav_graph" />
         <action
-            android:id="@+id/action_homeFragment_to_babyGalleryFragment3"
-            app:destination="@id/babyGalleryFragment3" />
+            android:id="@+id/action_homeFragment_to_regimenActivity"
+            app:destination="@id/regimenActivity" />
     </fragment>
-    <include app:graph="@navigation/babydetails_nav_graph"
-         />
     <fragment
         android:id="@+id/babyGalleryFragment3"
         android:name="com.example.babydiary.feed.BabyGalleryFragment"
@@ -73,4 +74,10 @@
             android:name="userId"
             app:argType="string" />
     </fragment>
+    <include app:graph="@navigation/babydetails_nav_graph" />
+    <activity
+        android:id="@+id/regimenActivity"
+        android:name="com.example.babydiary.RegimenActivity"
+        android:label="activity_regimen"
+        tools:layout="@layout/activity_regimen" />
 </navigation>

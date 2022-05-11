@@ -19,6 +19,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -91,6 +92,10 @@ public class BabyDetailsListRvFragment extends Fragment {
             else{
                 swipeRefresh.setRefreshing(false);
             }
+        });
+        Button homeBtn = view.findViewById(R.id.home_btn);
+        homeBtn.setOnClickListener((v)->{
+            Navigation.findNavController(v).navigateUp();
         });
         return view;
     }

@@ -1,17 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:backgroundTint="@color/pink3"
     tools:context=".RegimenActivity">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/regimen_navhost"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_text"
+        android:hint="Enter your todo work"
+        android:fontFamily="@font/happy_monkey"
+        android:padding="12dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/bt_add"
+            android:layout_marginRight="5dp"
+            android:text="Add"
+            android:fontFamily="@font/happy_monkey"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/bt_reset"
+            android:text="Reset"
+            android:fontFamily="@font/happy_monkey"/>
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/regimen_nav_graph" />
+        android:id="@+id/recycler_view"
+        android:layout_marginTop="8dp"
+        tools:listitem="@layout/regimen_list_row"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

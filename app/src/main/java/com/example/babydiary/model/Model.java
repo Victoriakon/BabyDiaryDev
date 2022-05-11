@@ -174,6 +174,9 @@ public class Model {
         this.signedUser = signedUser;
     }
 
+    //Model for Regimen part
+
+
 
 
 

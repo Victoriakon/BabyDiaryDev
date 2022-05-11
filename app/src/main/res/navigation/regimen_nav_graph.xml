@@ -13,9 +13,6 @@
         <action
             android:id="@+id/action_regimenListRvFragment_to_regimenFragment"
             app:destination="@id/regimenFragment" />
-        <action
-            android:id="@+id/action_regimenListRvFragment_to_addRegimenDetailsFragment"
-            app:destination="@id/addRegimenDetailsFragment" />
     </fragment>
 
     <fragment

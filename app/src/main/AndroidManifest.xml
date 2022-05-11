@@ -11,16 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BabyDiary">
         <activity
-            android:name=".RegimenActivity"
-            android:exported="false" />
-        <activity
             android:name=".login.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity2"
             android:exported="true" />
         <activity
-            android:name=".BaseActivity"
+            android:name=".RegimenActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

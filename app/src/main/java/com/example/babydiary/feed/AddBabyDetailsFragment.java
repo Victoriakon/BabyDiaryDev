@@ -56,7 +56,9 @@ public class AddBabyDetailsFragment extends Fragment {
             public void onClick(View v) {
                 save();
             }
+
         });
+
         camBtn=view.findViewById(R.id.main_cam_btn);
         galleryBtn=view.findViewById(R.id.main_gallery_btn);
         camBtn.setOnClickListener(v->{
@@ -67,6 +69,8 @@ public class AddBabyDetailsFragment extends Fragment {
         });
         return view;
     }
+
+
 
     private void openGallery() {
     }

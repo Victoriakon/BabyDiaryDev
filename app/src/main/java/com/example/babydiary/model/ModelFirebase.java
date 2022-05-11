@@ -127,9 +127,9 @@ public class ModelFirebase {
     }
 
 
-    public interface GetAllRegimenListener {
-        void onComplete(List<Regimen> list);
-    }
+//    public interface GetAllRegimenListener {
+//        void onComplete(List<Regimen> list);
+//    }
 
     //users connection
     public interface GetAllUsersListener {
@@ -208,7 +208,8 @@ public class ModelFirebase {
 
         // FirebaseFirestore db = FirebaseFirestore.getInstance();
         Map<String, Object> json = user.toMap();
-        db.collection(User.COLLECTION_NAME).document(user.getEmail())
+        db.collection(User.COLLECTION_NAME)
+                .document(user.getEmail())
                 .set(json)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -227,6 +228,12 @@ public class ModelFirebase {
     public void updateUser(User user, Model.AddUserListener listener) {
         addUser(user,listener);
     }
+
+
+
+    //Firebase for Regimen Part
+
+
 
 
 }
