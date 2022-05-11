@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.example.babydiary.R;
 import com.example.babydiary.model.BabyDetails;
@@ -29,6 +30,7 @@ public class BabyGalleryFragment extends Fragment {
     Button saveBtn;
     ImageButton camBtn;
     ImageButton galleryBtn;
+    ImageView babyImg;
     String user_id;
 
 
@@ -40,6 +42,8 @@ public class BabyGalleryFragment extends Fragment {
         saveBtn=view.findViewById(R.id.save_btn);
         camBtn=view.findViewById(R.id.main_cam_btn);
         galleryBtn=view.findViewById(R.id.main_gallery_btn);
+        babyImg=view.findViewById(R.id.baby_img);
+        babyImg.setTag("");
 
 //        user_id=HomeFragmentArgs.fromBundle(getArguments()).getUserId();
 
@@ -47,9 +51,10 @@ public class BabyGalleryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 save();
-//                Navigation.findNavController(v).navigate(BabyGalleryFragmentDirections.actionBabyGalleryFragment2ToHomeFragment(user_id));
+                Navigation.findNavController(v).navigateUp();
             }
         });
+
         camBtn=view.findViewById(R.id.main_cam_btn);
         galleryBtn=view.findViewById(R.id.main_gallery_btn);
         camBtn.setOnClickListener(v->{

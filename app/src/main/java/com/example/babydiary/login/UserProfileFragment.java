@@ -72,7 +72,7 @@ public class UserProfileFragment extends Fragment {
         });
 
         editBtn.setOnClickListener((v)->{
-//            Navigation.findNavController(v).navigate(UserProfileFragmentDirections.actionUserProfileFragmentToHomeFragment(user_id));
+            Navigation.findNavController(v).navigate(UserProfileFragmentDirections.actionUserProfileFragmentToHomeFragment(user_id));
             save();
         });
 
