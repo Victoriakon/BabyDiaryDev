@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +58,7 @@ public class BabyDetailsFragment extends Fragment {
         descTv = view.findViewById(R.id.details_desc_tv);
         avatarImv=view.findViewById(R.id.details_avatar_img);
 
+        descTv.setMovementMethod(new ScrollingMovementMethod());
 
         Button backBtn = view.findViewById(R.id.details_back_btn);
         backBtn.setOnClickListener((v)->{

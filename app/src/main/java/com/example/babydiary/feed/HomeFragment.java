@@ -55,6 +55,10 @@ public class HomeFragment extends Fragment{
         desc.setOnClickListener(v ->{
             toFeedActivity();
         });
+
+        profile.setOnClickListener(v->{
+            toProfActivity();
+        });
 //        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 //        userViewModel.getUserById(user_id, new UserViewModel.GetUserListener() {
 //            @Override
@@ -75,6 +79,12 @@ public class HomeFragment extends Fragment{
         gallery.setOnClickListener(Navigation.createNavigateOnClickListener(HomeFragmentDirections.actionHomeFragmentToBabyGalleryFragment3(user_id)));
         return view;
 
+    }
+
+    private void toProfActivity() {
+        Intent intent=new Intent(getContext(),UserProfileFragment.class);
+        startActivity(intent);
+        getActivity().finish();
     }
 
     private void toFeedActivity() {

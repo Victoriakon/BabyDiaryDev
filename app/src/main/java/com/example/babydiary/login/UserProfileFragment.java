@@ -19,6 +19,7 @@ import com.example.babydiary.R;
 import com.example.babydiary.model.Model;
 import com.example.babydiary.model.User;
 import com.example.babydiary.model.UserViewModel;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 import com.squareup.picasso.Picasso;
@@ -44,6 +45,7 @@ public class UserProfileFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_user_profile, container, false);
         user_id = UserProfileFragmentArgs.fromBundle(getArguments()).getUserId();
 
+
         editBtn = view.findViewById(R.id.profileF_editInfoBtn);
         name = view.findViewById(R.id.profileF_name);
         email = view.findViewById(R.id.profileF_mail);
@@ -52,6 +54,7 @@ public class UserProfileFragment extends Fragment {
         logoutBtn=view.findViewById(R.id.profile_logout_btn);
         profileImage = view.findViewById(R.id.profile_imageView);
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+
         userViewModel.getUserById(user_id, new UserViewModel.GetUserListener() {
             @Override
             public void onComplete(User user) {
